@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/9090e71d30.js"
+            crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300&display=swap"
+            rel="stylesheet">
+
+        <title>Music Player</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="play-section">
+
+                <div id="play-section-img"><img width="100%"
+                        src="Assessts\25c5c4492afabb6a7c4c03400f5c9999.png"
+                        id='song-img' alt>
+                </div>
+                <div id="play-section-text">
+                    <div>
+                        <p>Mesin Tempur
+                            <span><img
+                                    src="Assessts\Ellipse 1.svg"
+                                    alt></span>
+                            Hip Hop Sux! (2021) <br>
+                            <span id="song-name">
+                                Super Angkot Goblog
+                            </span>
+                        </p>
+                    </div>
+                    <div class="audio-controls">
+                        <audio id="audio" src="Audio/Super Angkot Goblog.mp3"
+                            type="audio/mp3" preload="metadata"></audio>
+                        <input type="range" value="0"  id="progress">
+                        <div class="controls">
+                            <img src="Assessts/saveIcon.svg" width="40%" alt id="save">
+                            <div>
+                                <img src="Assessts/shuffle.svg" alt id="shuffle">
+                                <img src="Assessts/previous.svg" id="previous">
+                                
+                                    <div class="circle">
+                                        <div class="pause"><img src="Assessts/pause.svg"></div>
+                                        <div class="play"><img src="Assessts/play.svg"></div>
+                                    </div>
+
+
+                                <img src="Assessts/next.svg" id="next">
+                                <img src="Assessts/repeat.svg" id="repeat">
+
+                            </div>
+                            <img src="Assessts/volume.svg" width="40%" id="volume">
+                        <img src="Assessts/mute.svg" alt="" id="mute">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="playlist-section">
+                <h3>PLAYLIST</h3>
+                <div class="songList" id="Hip Hop Sux!" onclick="setIndex(0)">
+                    <div id="song-image"><img src="Assessts/Rectangle 2.png" alt></div>
+                    <div id="song-name"> Hip Hop Sux!
+                        <div id="song-details">
+                            <div id="artist-name">Mesin Tempur</div>
+                            <div class="duration">2:33</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="songList" id="Mari Membaca" onclick="setIndex(1)">
+                    
+                    <div id="song-image"><img src="Assessts/Rectangle 2.png" alt></div>
+                    <div id="song-name"> Mari Membaca
+                        <div id="song-details">
+                            <div id="artist-name">Mesin Tempur</div>
+                            <div class="duration">1:19</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="songList" id="Super Angkot Goblog" onclick="setIndex(2)">
+                    <div id="song-image"><img src="Assessts/Rectangle 2.png" alt></div>
+                    <div id="song-name">Super Angkot Goblog
+                        <div id="song-details">
+                            <div id="artist-name">Mesin Tempur</div>
+                            <div class="duration">5:19</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="songList" id="Aku Death Metal" onclick="setIndex(3)">
+                    <div id="song-image"> <img src="Assessts/Rectangle 2.png" alt></div>
+                    <div id="song-name">Aku Death Metal
+                        <div id="song-details">
+                            <div id="artist-name">Mesin Tempur</div>
+                            <div class="duration">1:15</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
