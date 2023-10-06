@@ -37,9 +37,14 @@ previousIcon = playSection.querySelector("#previous"),
 shuffleIcon = playSection.querySelector("#shuffle"),
 saveIcon = playSection.querySelector("#save"),
 ctrlIcon = playSection.querySelector(".ctrlIcon"),
-muteIcon = playSection.querySelector("#mute")
-progress= playSection.querySelector("#progress")
-circle = playSection.querySelector('.circle');
+muteIcon = playSection.querySelector("#mute"),
+progress= playSection.querySelector("#progress"),
+circle = playSection.querySelector('.circle'),
+playlistSection = document.querySelector('.playlist-section'),
+songImage= playlistSection.querySelector('#songImage'),
+songDetails = playlistSection.querySelector('#song-details'),
+active= playlistSection.querySelector('.active'),
+songList = playSection.querySelectorAll('.songList');
 
 
 
@@ -64,16 +69,27 @@ let songIndex =0
 window.addEventListener("load" , ()=>{
     setIndex(songIndex);
 });
+
+
 function setIndex(indexValue){
     songTitle.textContent = playList[indexValue].name;
     audio.src = `Audio/${playList[indexValue].source}.mp3`;
-    
+   
+    const songLists = document.querySelectorAll('.songList')
+
+	songLists.forEach((song, index) =>
+		index === indexValue
+			? song.classList.add('active')
+			: song.classList.remove('active'),
+	)
+
     audio.play();
     playIcon.replaceWith(pauseIcon);
     if (audio.paused){
         pauseIcon.replaceWith(playIcon);
     }
-}
+    }
+    
 
 
 
@@ -107,7 +123,8 @@ nextIcon.addEventListener("click" , ()=>{
 })
 
 window.onload=()=>{
-    muteIcon.replaceWith(volumeIcon)
+    muteIcon.replaceWith(volumeIcon);
+    
 
 }
 volumeIcon.addEventListener("click", ()=>{
@@ -118,6 +135,10 @@ muteIcon.addEventListener("click", ()=>{
     audio.volume = 1;
     muteIcon.replaceWith(volumeIcon);
 })
+
+
+
+
 
 
 
